@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@mdi/font": "^5.9.55",
+    "@nuxt/cli": "CaoMeiYouRen/nuxt-cli",
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/axios": "^5.12.5",
     "@vue/composition-api": "^1.0.0-rc.1",

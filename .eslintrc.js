@@ -29,7 +29,7 @@ module.exports = {
             shouldMatchCase: true,
         }],
         'vue/no-reserved-component-names': [2], // 不允许在组件定义中使用保留名称
-        'vue/require-name-property': [1], // 组件必须命名
+        'vue/require-name-property': [0], // 组件必须命名
         'vue/block-tag-newline': 0,
         'vue/jsx-uses-vars': [1],
         'vue/no-unused-vars': [1],
