@@ -24,9 +24,9 @@ module.exports = {
     },
     parser: 'vue-eslint-parser',
     rules: {
-        'vue/match-component-file-name': [2, { // 要求组件名称属性与其文件名匹配
+        'vue/match-component-file-name': [1, { // 要求组件名称属性与其文件名匹配
             extensions: ['jsx', 'tsx', 'vue'],
-            shouldMatchCase: true,
+            shouldMatchCase: false,
         }],
         'vue/no-reserved-component-names': [2], // 不允许在组件定义中使用保留名称
         'vue/require-name-property': [0], // 组件必须命名

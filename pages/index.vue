@@ -16,12 +16,16 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-
 export default defineComponent({
+    name: 'Index',
     setup(props) {
         return {
             title: 'Welcome to the Vuetify + Nuxt.js template',
         }
+    },
+    async asyncData({ $axios }: any) {
+        // const post = await $axios.$get('')
+        // return { post }
     },
 })
 </script>

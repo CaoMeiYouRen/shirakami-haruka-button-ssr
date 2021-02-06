@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
@@ -51,6 +49,14 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        [
+            'nuxt-i18n',
+            {
+                locale: 'zh',
+                defaultLocale: 'zh',
+                vueI18n: '~/plugins/i18n-option',
+            },
+        ],
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -58,18 +64,12 @@ export default {
 
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
     vuetify: {
-        customVariables: ['~/assets/variables.scss'],
+        // customVariables: ['~/style/index.scss'],
         theme: {
             dark: false,
             themes: {
-                dark: {
-                    primary: colors.blue.darken2,
-                    accent: colors.grey.darken3,
-                    secondary: colors.amber.darken3,
-                    info: colors.teal.lighten1,
-                    warning: colors.amber.base,
-                    error: colors.deepOrange.accent4,
-                    success: colors.green.accent3,
+                light: {
+                    primary: '#ffaea6',
                 },
             },
         },
@@ -77,5 +77,14 @@ export default {
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
+    },
+
+    alias: {
+        '~~': '<rootDir>',
+        '@@': '<rootDir>',
+        '~': '<srcDir>',
+        '@': '<srcDir>',
+        assets: '<srcDir>/assets', // (unless you have set a custom `dir.assets`)
+        static: '<srcDir>/static', // (unless you have set a custom `dir.static`)
     },
 }
