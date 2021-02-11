@@ -119,11 +119,11 @@
 <script lang="ts">
 import { defineComponent, onUnmounted, computed, watch, watchEffect, ref } from '@vue/composition-api'
 import { useTitle, useOnScroll } from 'vue-composable'
-import { useOnWindowResize } from '@/composable'
 import i18n from '@/plugins/i18n'
 import vuetify from '@/plugins/vuetify'
 import { messages } from '@/locales'
 import { BASE_URL, CDN_PATH } from '@/config/env'
+import { useOnWindowResize } from '../composable'
 
 /**
  * 切换语言

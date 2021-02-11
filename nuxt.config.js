@@ -1,3 +1,4 @@
+import i18nOption from './plugins/i18n-option'
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
@@ -54,7 +55,7 @@ export default {
             {
                 locale: 'zh',
                 defaultLocale: 'zh',
-                vueI18n: '~/plugins/i18n-option',
+                vueI18n: i18nOption,
             },
         ],
     ],
@@ -80,6 +81,7 @@ export default {
     },
 
     alias: {
+        '@/composable': '<rootDir>/composable',
         '~~': '<rootDir>',
         '@@': '<rootDir>',
         '~': '<srcDir>',

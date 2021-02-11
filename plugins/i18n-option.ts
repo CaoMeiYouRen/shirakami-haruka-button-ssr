@@ -1,5 +1,5 @@
 import VueI18n from 'vue-i18n'
-import { messages } from '@/locales'
+import { messages } from '../locales'
 
 const i18nOption: VueI18n.I18nOptions = {
     locale: 'zh', // 设置地区
