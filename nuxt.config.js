@@ -16,6 +16,7 @@ export default {
             { hid: 'description', name: 'description', content: '' },
         ],
         link: [
+            // { ref: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_2115084_em9y98irv1s.css' },
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         ],
         script: [
@@ -25,6 +26,12 @@ export default {
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
+        'normalize.css',
+        'animate.css',
+        'material-design-icons-iconfont/dist/material-design-icons.css',
+        '@mdi/font/css/materialdesignicons.css',
+        '@/styles/index.scss',
+        '@/styles/iconfont.css',
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -38,6 +45,7 @@ export default {
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
+        ['@nuxtjs/dotenv', {}],
         // https://go.nuxtjs.dev/typescript
         '@nuxt/typescript-build',
         // https://go.nuxtjs.dev/stylelint
@@ -55,13 +63,38 @@ export default {
             {
                 locale: 'zh',
                 defaultLocale: 'zh',
+                locales: [
+                    {
+                        code: 'zh',
+                        name: 'Chinese',
+                    },
+                    {
+                        code: 'en',
+                        name: 'English',
+                    },
+                    {
+                        code: 'jp',
+                        name: 'Japanese',
+                    },
+                ],
                 vueI18n: i18nOption,
             },
         ],
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
-    axios: {},
+    axios: {
+        proxy: {
+            '/rss': {
+                target: 'https://rsshub.cmyr.ltd/',
+                ws: true,
+                changOrigin: true,
+                pathRewrite: {
+                    '^/rss': '/',
+                },
+            },
+        },
+    },
 
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
     vuetify: {
@@ -78,15 +111,21 @@ export default {
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
-    },
-
-    alias: {
-        '@/composable': '<rootDir>/composable',
-        '~~': '<rootDir>',
-        '@@': '<rootDir>',
-        '~': '<srcDir>',
-        '@': '<srcDir>',
-        assets: '<srcDir>/assets', // (unless you have set a custom `dir.assets`)
-        static: '<srcDir>/static', // (unless you have set a custom `dir.static`)
+        extend(config, context) {
+            config.module.rules.push({
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                    },
+                    {
+                        loader: 'markdown-it-loader',
+                        options: {
+                            html: true,
+                        },
+                    },
+                ],
+            })
+        },
     },
 }

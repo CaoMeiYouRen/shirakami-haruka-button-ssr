@@ -45,6 +45,15 @@ function strFix(val: string, max = 16) {
     }
     return val
 }
+
+function useMaxLength() {
+    const { width } = useOnWindowResize()
+    // 计算按钮标题最大字数
+    // 屏幕宽度减 44px ，除以每个字 19px，最大不超过32个字
+    const maxLength = computed(() => Math.min(Math.floor((width.value - 44) / 19), 32))
+    return maxLength
+}
+
 /**
  * 计算按钮标题
 */
@@ -64,11 +73,8 @@ function useButtonTile(messages: Ref<Record<string, string>>) {
         }
         return messages.value['zh']
     })
+    const maxLength = useMaxLength()
 
-    const { width } = useOnWindowResize()
-    // 计算按钮标题最大字数
-    // 屏幕宽度减 44px ，除以每个字 19px，最大不超过32个字
-    const maxLength = computed(() => Math.min(Math.floor((width.value - 44) / 19), 32))
     const title = computed(() => strFix(rawTitle.value, maxLength.value))
 
     return {
@@ -240,15 +246,33 @@ export default defineComponent({
                 ctx.emit('input', false)
             },
         })
-        const { maxLength, rawTitle, title } = useButtonTile(messages)
+        const maxLength = useMaxLength()
         return {
             play,
             style,
             maskList,
             maxLength,
-            rawTitle,
-            title,
         }
+    },
+    computed: {
+        rawTitle(): string {
+            const locale = this.$i18n.locale
+            let _title = this.messages[locale]
+            if (_title) {
+                return _title
+            }
+            for (let i = 0; i < langs.length; i++) {
+                const lang = langs[i]
+                _title = this.messages[lang]
+                if (_title) {
+                    return _title
+                }
+            }
+            return this.messages['zh']
+        },
+        title(): string {
+            return strFix(this.rawTitle, this.maxLength)
+        },
     },
 })
 </script>
@@ -267,7 +291,7 @@ export default defineComponent({
         text-transform: none;
 
         &.primary {
-            box-shadow: 0px 0px 7px $haruka-primary !important;
+            box-shadow: 0px 0px 7px $primary-color !important;
         }
     }
 }

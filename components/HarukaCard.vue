@@ -14,21 +14,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, Ref, toRefs } from '@vue/composition-api'
-import i18n from '@/plugins/i18n'
-
-function useCardTitle(tag: Ref<string>, rawTitle?: Ref<string>) {
-    const title = computed(() => {
-        if (rawTitle?.value) {
-            return rawTitle.value
-        }
-        if (!tag.value) {
-            return ''
-        }
-        return i18n.t(`tags.${tag.value}`)
-    })
-    return title
-}
+import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
     name: 'HarukaCard',
@@ -42,12 +28,18 @@ export default defineComponent({
             default: '',
         },
     },
-    setup(props, ctx) {
-        const { rawTitle, tag } = toRefs(props)
-        const title = useCardTitle(tag, rawTitle)
-        return {
-            title,
-        }
+    computed: {
+        title(): string {
+            const tag = this.tag
+            const rawTitle = this.rawTitle
+            if (rawTitle) {
+                return rawTitle
+            }
+            if (!tag) {
+                return ''
+            }
+            return this.$t(`tags.${tag}`) as string
+        },
     },
 })
 </script>
