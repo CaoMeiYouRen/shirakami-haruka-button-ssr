@@ -27,7 +27,7 @@ export default {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         ],
         script: [
-            { src: `https://hm.baidu.com/hm.js?${process.env.VUE_APP_BAIDU_STATISTICS}` },
+            { src: `https://hm.baidu.com/hm.js?${env.VUE_APP_BAIDU_STATISTICS}` }, // 百度统计代码
         ],
     },
 
@@ -111,7 +111,7 @@ export default {
             dark: false,
             themes: {
                 light: {
-                    primary: '#ffaea6',
+                    primary: env.VUE_APP_PRIMARY_COLOR,
                 },
             },
         },
