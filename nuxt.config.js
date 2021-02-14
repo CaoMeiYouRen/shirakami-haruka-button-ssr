@@ -1,4 +1,9 @@
+import FileManagerPlugin from 'filemanager-webpack-plugin'
 import i18nOption from './plugins/i18n-option'
+const env = process.env
+const __DEV__ = env.NODE_ENV === 'development'
+const __PROD__ = !__DEV__
+
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
@@ -129,6 +134,24 @@ export default {
                     },
                 ],
             })
+
+            if (__PROD__) {
+                config.plugins.push(
+                    new FileManagerPlugin({
+                        events: {
+                            onEnd: {
+                                delete: [
+                                    './static/voices.zip',
+                                    './dist/voices.zip',
+                                ],
+                                archive: [
+                                    { source: './static/voices', destination: './static/voices.zip' },
+                                ],
+                            },
+                        },
+                    }),
+                )
+            }
         },
     },
 }
