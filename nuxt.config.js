@@ -84,18 +84,19 @@ export default {
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
-        proxy: {
-            '/rss': {
-                target: 'https://rsshub.cmyr.ltd/',
-                ws: true,
-                changOrigin: true,
-                pathRewrite: {
-                    '^/rss': '/',
-                },
+        proxy: true, // 表示开启代理
+        // credentials: true, // 表示跨域请求时是否需要使用凭证
+    },
+    proxy: {
+        '/rss': {
+            target: 'https://rsshub.cmyr.ltd/',
+            ws: true,
+            changOrigin: true,
+            pathRewrite: {
+                '^/rss': '/',
             },
         },
     },
-
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
     vuetify: {
         // customVariables: ['~/style/index.scss'],

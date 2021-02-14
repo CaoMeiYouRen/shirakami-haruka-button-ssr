@@ -358,24 +358,22 @@ export default defineComponent({
     props: {},
     setup(props, ctx) {
         const play = useLoopAndRandomPlay()
-
+        const dynamic = useBiliDynamic(BILI_UID)
         return {
             ...play,
             shabao,
             shabaoMin,
             friendshipLinks,
+            ...dynamic,
             HTML_TITLE,
             GITHUB_LINK,
-            dynamic: [],
-            loading: false,
-            enableDynamic: false,
         }
     },
-    async asyncData({ $axios }: any): Promise<any> {
-        const resp = await $axios.get(`/bilibili/user/dynamic/${BILI_UID}`, { baseURL: RSS_BASE_URL })
-        // console.log(resp)
-        return {}
-    },
+    // async asyncData({ $axios }: any): Promise<any> {
+    //     const resp = await $axios.get(`/bilibili/user/dynamic/${BILI_UID}`, { baseURL: RSS_BASE_URL })
+    //     // console.log(resp)
+    //     return {}
+    // },
 })
 </script>
 
