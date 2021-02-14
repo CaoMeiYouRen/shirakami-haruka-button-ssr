@@ -2,7 +2,9 @@ import i18nOption from './plugins/i18n-option'
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
-
+    server: {
+        port: 7000, // default: 3000
+    },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         titleTemplate: '%s',
