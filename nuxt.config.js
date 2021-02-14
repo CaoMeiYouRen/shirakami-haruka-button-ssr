@@ -22,7 +22,7 @@ export default {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         ],
         script: [
-            // { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', async: true, defer: true }
+            { src: `https://hm.baidu.com/hm.js?${process.env.VUE_APP_BAIDU_STATISTICS}` },
         ],
     },
 

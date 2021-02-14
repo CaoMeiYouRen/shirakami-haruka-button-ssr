@@ -10,7 +10,8 @@
     "lint:js": "cross-env NODE_ENV=production eslint --fix --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:style": "cross-env NODE_ENV=production stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore --syntax scss --custom-syntax postcss-html --fix",
     "lint": "npm run lint:js && npm run lint:style",
-    "deploy": "npm run generate"
+    "release": "semantic-release",
+    "deploy": "npm run generate && node ./deploy"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "cross-env NODE_ENV=production eslint --fix --ext \".js,.ts,.vue\"",
