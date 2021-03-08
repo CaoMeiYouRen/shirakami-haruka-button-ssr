@@ -1,5 +1,12 @@
 # shirakami-haruka-button-ssr (豹按钮(:3っ)∋)
 
+## [1.0.1](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.0.0...v1.0.1) (2021-03-08)
+
+
+### 🐛 Bug Fixes
+
+* 新增 sitemap ([bbf0afc](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/commit/bbf0afc))
+
 # 1.0.0 (2021-02-14)
 
 
