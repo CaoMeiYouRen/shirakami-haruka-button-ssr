@@ -3,7 +3,7 @@ import i18nOption from './plugins/i18n-option'
 const env = process.env
 const __DEV__ = env.NODE_ENV === 'development'
 const __PROD__ = !__DEV__
-
+const hostname = env.VUE_APP_HOSTNAME
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
@@ -59,6 +59,7 @@ export default {
         '@nuxtjs/stylelint-module',
         // https://go.nuxtjs.dev/vuetify
         '@nuxtjs/vuetify',
+
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -87,6 +88,7 @@ export default {
                 vueI18n: i18nOption,
             },
         ],
+        '@nuxtjs/sitemap',
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -116,7 +118,16 @@ export default {
             },
         },
     },
-
+    sitemap: {
+        hostname,
+        gzip: false,
+        i18n: true,
+        defaults: {
+            changefreq: 'daily',
+            priority: 1,
+            lastmod: new Date(),
+        },
+    },
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
         extend(config, context) {

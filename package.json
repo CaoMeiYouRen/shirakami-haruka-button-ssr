@@ -29,6 +29,7 @@
     "@nuxt/cli": "CaoMeiYouRen/nuxt-cli",
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/sitemap": "^2.4.0",
     "@vue-composable/axios": "^1.0.0-beta.16",
     "@vue/composition-api": "^1.0.0-rc.1",
     "animate.css": "^4.1.1",
