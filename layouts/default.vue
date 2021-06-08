@@ -136,7 +136,7 @@ import { computed, defineComponent, onUnmounted } from '@vue/composition-api'
 import { useOnScroll, useTitle } from 'vue-composable'
 import { safeOpenUrl } from '@/utils/helper'
 
-const langList: {lang: string, label: string}[] = Object.keys(messages).map((e) => ({
+const langList: { lang: string, label: string }[] = Object.keys(messages).map((e) => ({
     lang: e,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore

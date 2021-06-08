@@ -34,5 +34,6 @@ module.exports = {
         'vue/jsx-uses-vars': [1],
         'vue/no-unused-vars': [1],
         'no-unused-vars': [0],
+        'eol-last': [IS_PROD, 'never'], // 禁止文件末尾存在空行
     },
 }
