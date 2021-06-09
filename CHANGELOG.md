@@ -1,5 +1,13 @@
 # shirakami-haruka-button-ssr (豹按钮(:3っ)∋)
 
+## [1.0.3](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.0.2...v1.0.3) (2021-06-09)
+
+
+### 🐛 Bug Fixes
+
+* 修复 nuxt 版本问题 ([ca8ffd8](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/commit/ca8ffd8))
+* 修复 sass 报错 ([34dad64](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/commit/34dad64))
+
 ## [1.0.2](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.0.1...v1.0.2) (2021-03-23)
 
 
