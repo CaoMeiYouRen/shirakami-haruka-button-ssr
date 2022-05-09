@@ -69,7 +69,7 @@
     "conventional-changelog-cli": "^2.1.1",
     "conventional-changelog-cmyr-config": "^1.2.3",
     "cross-env": "^7.0.3",
-    "eslint": "^7.18.0",
+    "eslint": "^8.15.0",
     "eslint-config-cmyr": "^1.1.0",
     "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-vue": "^7.5.0",
