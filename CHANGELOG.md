@@ -1,5 +1,12 @@
 # shirakami-haruka-button-ssr (豹按钮(:3っ)∋)
 
+# [1.1.0](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.0.3...v1.1.0) (2022-06-18)
+
+
+### ✨ Features
+
+* 移除 自动设置的CDN_PATH；优化 百度统计；修复 husky 配置 ([35f5876](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/commit/35f5876))
+
 ## [1.0.3](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.0.2...v1.0.3) (2021-06-09)
 
 
