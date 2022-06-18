@@ -22,6 +22,8 @@
 >   本项目为 [豹按钮(:3っ)∋](https://github.com/CaoMeiYouRen/shirakami-haruka-button) 的 SSR 版本，功能完全一致。
 >
 >   关于 SSR 是什么详见：[Vue.js 服务器端渲染指南](https://ssr.vuejs.org/zh/)
+>
+>   **温馨提示**：由于 `cdn.jsdelivr.net` 在中国大陆地区曾经被封禁过，可靠性不高，故移除了自动设置的 `CDN_PATH`，现在的音声会默认从本地加载。如有 CDN 加速需求请自行设置 `CDN_PATH`
 
 ### 🏠 [主页](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr#readme)
 

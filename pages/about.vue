@@ -68,9 +68,9 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import { dependencies, devDependencies } from '../package.json'
 import { friendshipLinks } from '@/config/links'
 import { AUTHOR, AUTHOR_BILI_UID, GITHUB_NAME } from '@/config/env'
-import { dependencies, devDependencies } from '../package.json'
 const dep = Object.assign({}, dependencies, devDependencies)
 function verFormat(ver: string): string {
     const list = ver.split('.')

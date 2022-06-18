@@ -129,11 +129,11 @@
 </template>
 
 <script lang="ts">
+import { computed, defineComponent, onUnmounted } from '@vue/composition-api'
+import { useOnScroll, useTitle } from 'vue-composable'
 import { useOnWindowResize } from '@/composable'
 import { NODE_ENV, BASE_URL, BILI_UID, CDN_PATH, GITHUB_LINK } from '@/config/env'
 import { messages } from '@/locales'
-import { computed, defineComponent, onUnmounted } from '@vue/composition-api'
-import { useOnScroll, useTitle } from 'vue-composable'
 import { safeOpenUrl } from '@/utils/helper'
 
 const langList: { lang: string, label: string }[] = Object.keys(messages).map((e) => ({

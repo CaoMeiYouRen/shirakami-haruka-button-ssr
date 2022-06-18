@@ -22,7 +22,7 @@ export const GITHUB_REPOSITORIE = process.env.VUE_APP_GITHUB_REPOSITORIE || ''
 
 export const REPOSITORIE_NAME = `${GITHUB_NAME}/${GITHUB_REPOSITORIE}`
 
-export const CDN_PATH = `https://cdn.jsdelivr.net/gh/${REPOSITORIE_NAME}@latest/static`
+export const CDN_PATH = process.env.VUE_APP_CDN_PATH // `https://cdn.jsdelivr.net/gh/${REPOSITORIE_NAME}@latest/static`
 
 export const GITHUB_LINK = `https://github.com/${REPOSITORIE_NAME}`
 

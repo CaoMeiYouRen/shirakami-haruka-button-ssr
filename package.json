@@ -12,17 +12,12 @@
     "lint:style": "cross-env NODE_ENV=production stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore --syntax scss --custom-syntax postcss-html --fix",
     "lint": "npm run lint:js && npm run lint:style",
     "release": "semantic-release",
-    "deploy": "npm run generate && node ./deploy"
+    "deploy": "npm run generate && node ./deploy",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "cross-env NODE_ENV=production eslint --fix --ext \".js,.ts,.vue\"",
     "*.{css,scss,vue}": "stylelint"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@mdi/font": "^6.5.95",
@@ -70,7 +65,7 @@
     "conventional-changelog-cmyr-config": "^1.2.3",
     "cross-env": "^7.0.3",
     "eslint": "^7.18.0",
-    "eslint-config-cmyr": "^1.1.0",
+    "eslint-config-cmyr": "^1.1.20",
     "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-vue": "^7.5.0",
     "filemanager-webpack-plugin": "^6.1.2",

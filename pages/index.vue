@@ -211,6 +211,10 @@
 </template>
 
 <script lang="ts">
+import { useAxios } from '@vue-composable/axios'
+import { computed, defineComponent, nextTick, onUnmounted, ref, watch, WatchStopHandle } from '@vue/composition-api'
+import _ from 'lodash'
+import { usePromise } from 'vue-composable'
 import shabao from '@/assets/shabao.jpg'
 import shabaoMin from '@/assets/shabao.min.jpg'
 import { BILI_UID, RSS_BASE_URL, HTML_TITLE, GITHUB_LINK } from '@/config/env'
@@ -218,10 +222,6 @@ import { friendshipLinks } from '@/config/links'
 import voices from '@/config/voices'
 import { rssParserString } from '@/utils/rssParser'
 import { timeFormat } from '@/utils/time'
-import { useAxios } from '@vue-composable/axios'
-import { computed, defineComponent, nextTick, onUnmounted, ref, watch, WatchStopHandle } from '@vue/composition-api'
-import _ from 'lodash'
-import { usePromise } from 'vue-composable'
 
 function useBiliDynamic(uid: string) {
     if (!uid) {

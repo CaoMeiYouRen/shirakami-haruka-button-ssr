@@ -23,12 +23,11 @@ export default {
             { hid: 'description', name: 'description', content: '' },
         ],
         link: [
-            // { ref: 'stylesheet', type: 'text/css', href: 'https://at.alicdn.com/t/font_2115084_em9y98irv1s.css' },
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         ],
         script: [
-            { src: `https://hm.baidu.com/hm.js?${env.VUE_APP_BAIDU_STATISTICS}` }, // 百度统计代码
-        ],
+            env.VUE_APP_BAIDU_STATISTICS && { src: `https://hm.baidu.com/hm.js?${env.VUE_APP_BAIDU_STATISTICS}` }, // 百度统计代码
+        ].filter(Boolean),
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
