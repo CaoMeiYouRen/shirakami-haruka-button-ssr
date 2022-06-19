@@ -1,5 +1,12 @@
 # shirakami-haruka-button-ssr (豹按钮(:3っ)∋)
 
+## [1.1.1](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.1.0...v1.1.1) (2022-06-19)
+
+
+### 🐛 Bug Fixes
+
+* 指定 axios 版本 ([f42633f](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/commit/f42633f))
+
 # [1.1.0](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.0.3...v1.1.0) (2022-06-18)
 
 
