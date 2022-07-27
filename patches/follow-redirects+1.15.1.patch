@@ -1,0 +1,62 @@
+diff --git a/node_modules/follow-redirects/index.js b/node_modules/follow-redirects/index.js
+index 212f00a..6ab34d7 100644
+--- a/node_modules/follow-redirects/index.js
++++ b/node_modules/follow-redirects/index.js
+@@ -276,7 +276,7 @@ RedirectableRequest.prototype._performRequest = function () {
+ 
+   // Create the native request and set up its event handlers
+   var request = this._currentRequest =
+-        nativeProtocol.request(this._options, this._onNativeResponse);
++    nativeProtocol.request(this._options, this._onNativeResponse);
+   request._redirectable = this;
+   for (var event of events) {
+     request.on(event, eventHandlers[event]);
+@@ -345,7 +345,7 @@ RedirectableRequest.prototype._processResponse = function (response) {
+   // If the response is not a redirect; return it as-is
+   var location = response.headers.location;
+   if (!location || this._options.followRedirects === false ||
+-      statusCode < 300 || statusCode >= 400) {
++    statusCode < 300 || statusCode >= 400) {
+     response.responseUrl = this._currentUrl;
+     response.redirects = this._redirects;
+     this.emit("response", response);
+@@ -383,11 +383,11 @@ RedirectableRequest.prototype._processResponse = function (response) {
+   // the request method from POST to GET for the subsequent request.
+   var method = this._options.method;
+   if ((statusCode === 301 || statusCode === 302) && this._options.method === "POST" ||
+-      // RFC7231§6.4.4: The 303 (See Other) status code indicates that
+-      // the server is redirecting the user agent to a different resource […]
+-      // A user agent can perform a retrieval request targeting that URI
+-      // (a GET or HEAD request if using HTTP) […]
+-      (statusCode === 303) && !/^(?:GET|HEAD)$/.test(this._options.method)) {
++    // RFC7231§6.4.4: The 303 (See Other) status code indicates that
++    // the server is redirecting the user agent to a different resource […]
++    // A user agent can perform a retrieval request targeting that URI
++    // (a GET or HEAD request if using HTTP) […]
++    (statusCode === 303) && !/^(?:GET|HEAD)$/.test(this._options.method)) {
+     this._options.method = "GET";
+     // Drop a possible entity and headers related to it
+     this._requestBodyBuffers = [];
+@@ -422,9 +422,9 @@ RedirectableRequest.prototype._processResponse = function (response) {
+   // Drop confidential headers when redirecting to a less secure protocol
+   // or to a different domain that is not a superdomain
+   if (redirectUrlParts.protocol !== currentUrlParts.protocol &&
+-     redirectUrlParts.protocol !== "https:" ||
+-     redirectUrlParts.host !== currentHost &&
+-     !isSubdomain(redirectUrlParts.host, currentHost)) {
++    redirectUrlParts.protocol !== "https:" ||
++    redirectUrlParts.host !== currentHost &&
++    !isSubdomain(redirectUrlParts.host, currentHost)) {
+     removeMatchingHeaders(/^(?:authorization|cookie)$/i, this._options.headers);
+   }
+ 
+@@ -589,6 +589,9 @@ function abortRequest(request) {
+ }
+ 
+ function isSubdomain(subdomain, domain) {
++  if (!subdomain || !domain) {
++    return false
++  }
+   const dot = subdomain.length - domain.length - 1;
+   return dot > 0 && subdomain[dot] === "." && subdomain.endsWith(domain);
+ }
