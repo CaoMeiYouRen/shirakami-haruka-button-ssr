@@ -1,5 +1,12 @@
 # shirakami-haruka-button-ssr (豹按钮(:3っ)∋)
 
+## [1.1.3](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.1.2...v1.1.3) (2022-07-27)
+
+
+### 🐛 Bug Fixes
+
+* 修复 follow-redirects 问题 ([8ed3988](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/commit/8ed3988))
+
 ## [1.1.2](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.1.1...v1.1.2) (2022-07-27)
 
 
