@@ -1,5 +1,14 @@
 # shirakami-haruka-button-ssr (豹按钮(:3っ)∋)
 
+## [1.1.2](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.1.1...v1.1.2) (2022-07-27)
+
+
+### 🐛 Bug Fixes
+
+* 优化 CI 问题 ([2073aae](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/commit/2073aae))
+* 修复 globby 的路径错误问题 ([449437b](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/commit/449437b))
+* 移除 dependabot ([58513ba](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/commit/58513ba))
+
 ## [1.1.1](https://github.com/CaoMeiYouRen/shirakami-haruka-button-ssr/compare/v1.1.0...v1.1.1) (2022-06-19)
 
 
